@@ -1,5 +1,7 @@
 #include "StateManager.h"
 #include "DisplayWindow.h"
+#include "TimeStepMutex.h"
+
 #include "SplashScreenState.h"
 #include "MainMenuState.h"
 
@@ -17,8 +19,12 @@ public:
 	~Engine();
 
 private:
-	StateManager _stateManager;
+	StateManager m_stateManager;
 
 	DisplayWindow* m_p_displayWindow;
+
+	TimeStepMutex m_timeStepMutex;
+
+
 };
 

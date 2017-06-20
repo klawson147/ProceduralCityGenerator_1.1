@@ -9,6 +9,7 @@ DisplayWindow::DisplayWindow()
 void DisplayWindow::Init()
 {
 	m_p_renderWindow = new sf::RenderWindow(sf::VideoMode(1280, 720), "Procedural City Generator", sf::Style::Close);
+	
 }
 
 void DisplayWindow::Render()

@@ -1,11 +1,8 @@
 #include "Engine.h"
 
-
 Engine::Engine()
 {
-	
 }
-
 
 Engine::~Engine()
 {
@@ -16,8 +13,10 @@ bool Engine::Initialize()
 	m_p_displayWindow = new DisplayWindow();
 	m_p_displayWindow->Init();
 
-	_stateManager.PushState(new MainMenuState(&_stateManager));
-	_stateManager.PushState(new SplashScreenState(&_stateManager));
+	m_timeStepMutex.Init();
+
+	m_stateManager.PushState(new MainMenuState(&m_stateManager));
+	m_stateManager.PushState(new SplashScreenState(&m_stateManager));
 
 	return true;
 }
@@ -32,19 +31,21 @@ bool Engine::Start()
 		// Clear window
 		m_p_displayWindow->Clear();
 
-		// Check for specific state events
-		_stateManager.GetCurrentState()->GetEvents();
+		// Locked Time Step
+		while (m_timeStepMutex.isLocked())
+		{
+			// Check for specific state events
+			m_stateManager.GetCurrentState()->GetEvents();
 
-		// Update current state
-		_stateManager.GetCurrentState()->Update();
+			// Update current state
+			m_stateManager.GetCurrentState()->Update();
 
-		// Draw current state to window
-		_stateManager.GetCurrentState()->Display();
-		
+			// Draw current state to window
+			m_stateManager.GetCurrentState()->Display();
+		}
+
 		// Draw current screen to user
 		m_p_displayWindow->Render();
-
-		
 	}
 
 	return true;
