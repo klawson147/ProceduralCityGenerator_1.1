@@ -1,12 +1,13 @@
 #pragma once
 #include <iostream>
+#include "ResourceHolder.h"
 
 class StateManager;
 
 class IState
 {
 public:
-	
+
 	IState(StateManager*);
 
 	// Executed at the beginning of each state
@@ -15,7 +16,7 @@ public:
 	// Occurs when the state is left
 	virtual void Cleanup() = 0;
 
-	// Execute code to pause a state 
+	// Execute code to pause a state
 	virtual void Pause() = 0;
 
 	// Execute code to resume a state
@@ -31,6 +32,13 @@ public:
 	virtual void Display() = 0;
 
 protected:
-	StateManager* m_p_stateManager;
-};
 
+	StateManager* m_p_stateManager;
+
+	static ResourceHolder m_s_c_resourceHolder;
+
+protected:
+
+	const sf::Texture&	getTexture(TextureName)	const;
+	const sf::Font&		getFont(FontName)		const;
+};
