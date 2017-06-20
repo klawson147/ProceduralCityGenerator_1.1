@@ -3,7 +3,6 @@
 #include <vector>
 #include "IState.h"
 #include "MainMenuState.h"
-#include "ResourceHolder.h"
 
 class StateManager
 {
@@ -18,11 +17,11 @@ public:
 
 	IState* GetCurrentState();
 
-	const ResourceHolder& getResources() const;
+
 
 private:
 	std::vector<IState*> m_states;
 
-	ResourceHolder m_resources;
+
 };
 
