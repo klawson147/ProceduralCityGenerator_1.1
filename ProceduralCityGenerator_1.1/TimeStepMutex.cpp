@@ -2,24 +2,25 @@
 
 void TimeStepMutex::Init()
 {
-	m_nextSimTick = m_clock.getElapsedTime().asMilliseconds();
+	
 }
 
 bool TimeStepMutex::isLocked()
 {
+	sf::Time elapsedTime = m_clock.restart();
+
+	m_timeSinceLastUpdate += elapsedTime;
+
 	// If true, locked.
-	if (m_clock.getElapsedTime().asMilliseconds() > (sf::Int32)m_nextSimTick
-		&& m_loops < MAX_FRAMESKIP)
+	if (m_timeSinceLastUpdate > m_c_timePerFrame)
 	{
-		m_nextSimTick += (unsigned long int)SKIP_TICKS;
-		m_loops += 1;
+		m_timeSinceLastUpdate -= m_c_timePerFrame;
+
 		return true;
 	}
 	// if false, unlocked.
 	else
 	{
-		m_loops = 0;
-
 		return false;
 	}
 }

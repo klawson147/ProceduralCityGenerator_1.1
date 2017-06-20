@@ -1,9 +1,6 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 
-#define MAX_FPS			60
-#define SKIP_TICKS		16.666
-#define MAX_FRAMESKIP	10
 
 class TimeStepMutex
 {
@@ -15,10 +12,10 @@ private:
 	sf::Clock
 		m_clock;
 
-	unsigned long int 
-		m_nextSimTick;
+	sf::Time
+		m_timeSinceLastUpdate = sf::Time::Zero;
 
-	unsigned int
-		m_loops = 0;
+	const sf::Time
+		m_c_timePerFrame = sf::seconds(1.f / 60.f);
 
 };
