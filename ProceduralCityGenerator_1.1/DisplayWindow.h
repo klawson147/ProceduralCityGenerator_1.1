@@ -19,6 +19,6 @@ private:
 	sf::RenderWindow* m_p_renderWindow;
 
 	void closeWindow();
-	void resizeWindow(sf::Vector2f);
+	void resizeWindow(sf::Vector2u);
 };
 

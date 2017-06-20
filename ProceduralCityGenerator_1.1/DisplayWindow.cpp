@@ -1,6 +1,11 @@
 #include "DisplayWindow.h"
 
 
+DisplayWindow::~DisplayWindow()
+{
+	delete m_p_renderWindow;
+}
+
 DisplayWindow::DisplayWindow()
 {
 
@@ -44,10 +49,9 @@ bool DisplayWindow::isOpen()
 void DisplayWindow::closeWindow()
 {
 	m_p_renderWindow->close();
-	delete m_p_renderWindow;
 }
 
-void DisplayWindow::resizeWindow(sf::Vector2f size)
+void DisplayWindow::resizeWindow(sf::Vector2u size)
 {
 	delete m_p_renderWindow;
 	m_p_renderWindow = new sf::RenderWindow(sf::VideoMode(size.x, size.y), "Procedural City Generator", sf::Style::Close);
