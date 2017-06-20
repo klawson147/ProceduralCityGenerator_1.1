@@ -10,8 +10,7 @@ Engine::~Engine()
 
 bool Engine::Initialize()
 {
-	m_p_displayWindow = new DisplayWindow();
-	m_p_displayWindow->Init();
+	DisplayWindow::Init();
 
 	m_timeStepMutex.Init();
 
@@ -23,13 +22,13 @@ bool Engine::Initialize()
 
 bool Engine::Start()
 {
-	while (m_p_displayWindow->isOpen())
+	while (DisplayWindow::isOpen())
 	{
 		// Check for window events
-		m_p_displayWindow->checkWindowEvents();
+		DisplayWindow::checkWindowEvents();
 
 		// Clear window
-		m_p_displayWindow->Clear();
+		DisplayWindow::Clear();
 
 		// Locked Time Step
 		while (m_timeStepMutex.isLocked())
@@ -45,7 +44,7 @@ bool Engine::Start()
 		}
 
 		// Draw current screen to user
-		m_p_displayWindow->Render();
+		DisplayWindow::Render();
 	}
 
 	return true;

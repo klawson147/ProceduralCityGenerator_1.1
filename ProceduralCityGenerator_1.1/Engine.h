@@ -21,10 +21,5 @@ public:
 private:
 	StateManager m_stateManager;
 
-	DisplayWindow* m_p_displayWindow;
-
 	TimeStepMutex m_timeStepMutex;
-
-
 };
-
