@@ -14,6 +14,7 @@ Engine::~Engine()
 bool Engine::Initialize()
 {
 	m_p_displayWindow = new DisplayWindow();
+	m_p_displayWindow->Init();
 
 	_stateManager.PushState(new MainMenuState(&_stateManager));
 	_stateManager.PushState(new SplashScreenState(&_stateManager));
@@ -43,6 +44,7 @@ bool Engine::Start()
 		// Draw current screen to user
 		m_p_displayWindow->Render();
 
+		
 	}
 
 	return true;

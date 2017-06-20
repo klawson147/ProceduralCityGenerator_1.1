@@ -1,5 +1,7 @@
-#include <iostream>
 #pragma once
+#include <iostream>
+#include <SFML\Graphics.hpp>
+
 class DisplayWindow
 {
 public:
@@ -12,5 +14,11 @@ public:
 
 	DisplayWindow();
 	~DisplayWindow();
+
+private:
+	sf::RenderWindow* m_p_renderWindow;
+
+	void closeWindow();
+	void resizeWindow(sf::Vector2f);
 };
 

@@ -8,25 +8,46 @@ DisplayWindow::DisplayWindow()
 
 void DisplayWindow::Init()
 {
-	std::cout << "Window Init\n";
+	m_p_renderWindow = new sf::RenderWindow(sf::VideoMode(1280, 720), "Procedural City Generator", sf::Style::Close);
 }
 
 void DisplayWindow::Render()
 {
-	std::cout << "Window Render\n";
+	m_p_renderWindow->display();
 }
 void DisplayWindow::Clear()
 {
-	std::cout << "Window Clear\n";
+	m_p_renderWindow->clear(sf::Color::Black);
 }
 
 void DisplayWindow::checkWindowEvents()
 {
-	std::cout << "Window Check Event\n";
+	sf::Event _event;
+
+	while (m_p_renderWindow->pollEvent(_event))
+	{
+		switch (_event.type)
+		{
+		case sf::Event::Closed:
+			closeWindow();
+			break;
+		}
+	}
+
 }
 bool DisplayWindow::isOpen()
 {
-	return true;
+	return m_p_renderWindow->isOpen();
 }
 
+void DisplayWindow::closeWindow()
+{
+	m_p_renderWindow->close();
+	delete m_p_renderWindow;
+}
 
+void DisplayWindow::resizeWindow(sf::Vector2f size)
+{
+	delete m_p_renderWindow;
+	m_p_renderWindow = new sf::RenderWindow(sf::VideoMode(size.x, size.y), "Procedural City Generator", sf::Style::Close);
+}
