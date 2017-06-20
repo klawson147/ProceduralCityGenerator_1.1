@@ -66,3 +66,8 @@ IState* StateManager::GetCurrentState()
 {
 	return m_states.back();
 }
+
+const ResourceHolder& StateManager::getResources() const
+{
+	return m_resources;
+}
