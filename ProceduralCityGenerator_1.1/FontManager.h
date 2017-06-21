@@ -1,5 +1,5 @@
 #pragma once
-
+#include "ResourceManager.h"
 #include <SFML\Graphics.hpp>
 #include <map>
 enum class FontName
@@ -7,17 +7,13 @@ enum class FontName
 	sf_atarian_system
 };
 
-class FontManager
+class FontManager :
+	public ResourceManager<FontName, sf::Font>
 {
 public:
 	FontManager();
-	~FontManager();
 
-	const sf::Font& get(FontName) const;
 
 private:
 
-	void addResource(FontName, const std::string&);
-
-	std::map<FontName, sf::Font> m_font;
 };
