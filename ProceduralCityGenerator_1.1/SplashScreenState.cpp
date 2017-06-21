@@ -13,29 +13,23 @@ void SplashScreenState::Init()
 	m_title_main.setCharacterSize(62);
 	m_title_main.setColor(sf::Color(0, 0, 0, 255));
 	m_title_main.setString("Procedural City Generator");
-
-	sf::Vector2f pos = DisplayWindow::getRelativePosition(
+	m_title_main.setPosition(DisplayWindow::getRelativePosition(
 		DisplayWindowPosition::top_center,
 		sf::Vector2f(
 		m_title_main.getGlobalBounds().width,
 		m_title_main.getGlobalBounds().height),
-		sf::Vector2f(0, 0));
-
-	m_title_main.setPosition(pos);
+		sf::Vector2f(0, 0)));
 
 	m_title_secondary.setFont(ResourceHolder::get().getFont(FontName::sf_atarian_system));
 	m_title_secondary.setCharacterSize(36);
 	m_title_secondary.setColor(sf::Color(0, 0, 0, 255));
 	m_title_secondary.setString("Created Using");
-
-	pos = DisplayWindow::getRelativePosition(
+	m_title_secondary.setPosition(DisplayWindow::getRelativePosition(
 		DisplayWindowPosition::top_center,
 		sf::Vector2f(
 		m_title_secondary.getGlobalBounds().width,
 		m_title_secondary.getGlobalBounds().height),
-		sf::Vector2f(0, 125));
-
-	m_title_secondary.setPosition(pos);
+		sf::Vector2f(0, 125)));
 
 	m_logo.setTexture(ResourceHolder::get().getTexture(TextureName::sfml_logo_small));
 	m_logo.setPosition(
@@ -47,6 +41,10 @@ void SplashScreenState::Init()
 		sf::Vector2f(0, -50)));
 
 	m_background.setTexture(ResourceHolder::get().getTexture(TextureName::skyline1920));
+	m_background.scale(
+		DisplayWindow::getSize().x / m_background.getLocalBounds().width,
+		1);
+
 	m_background.setPosition(
 		DisplayWindow::getRelativePosition(
 		DisplayWindowPosition::bottom_left,

@@ -26,6 +26,8 @@ namespace DisplayWindow
 	void checkWindowEvents();
 	bool isOpen();
 
+	sf::Vector2u getSize();
+
 	void Draw(sf::Drawable&);
 
 	sf::Vector2f getRelativePosition(
