@@ -42,4 +42,9 @@ namespace DisplayWindow
 	{
 		m_p_renderWindow->draw(element);
 	}
+
+	sf::Vector2u getWindowSize()
+	{
+		return m_p_renderWindow->getSize();
+	}
 }

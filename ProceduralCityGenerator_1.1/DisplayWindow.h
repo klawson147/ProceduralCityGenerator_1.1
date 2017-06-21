@@ -11,4 +11,6 @@ namespace DisplayWindow
 	bool isOpen();
 
 	void Draw(sf::Drawable&);
+
+	sf::Vector2u getWindowSize();
 }
