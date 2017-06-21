@@ -43,7 +43,7 @@ namespace DisplayWindow
 		m_p_renderWindow->draw(element);
 	}
 
-	sf::Vector2f getRelativePosition(DisplayWindowPosition position, sf::Vector2u size, sf::Vector2f offset)
+	sf::Vector2f getRelativePosition(DisplayWindowPosition position, sf::Vector2f size, sf::Vector2f offset)
 	{
 		sf::Vector2f newPosition;
 

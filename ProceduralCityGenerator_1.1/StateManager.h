@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <memory>
 #include "IState.h"
 #include "MainMenuState.h"
 
@@ -10,18 +11,13 @@ public:
 	StateManager();
 	~StateManager();
 
-	void ChangeState(IState* state);
-	void PushState(IState* state);
+	void ChangeState(std::shared_ptr<IState> state);
+	void PushState(std::shared_ptr<IState> state);
 	void PopState();
 	void Clear();
 
-	IState* GetCurrentState();
-
-
+	std::shared_ptr<IState> GetCurrentState();
 
 private:
-	std::vector<IState*> m_states;
-
-
+	std::vector<std::shared_ptr<IState>> m_states;
 };
-

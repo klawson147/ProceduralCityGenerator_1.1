@@ -1,5 +1,6 @@
-#include "IState.h"
 #pragma once
+#include "IState.h"
+#include "StateManager.h"
 
 class SplashScreenState :
 	public IState
@@ -26,5 +27,7 @@ private:
 
 	sf::Sprite	m_background;
 	sf::Sprite	m_logo;
+
+	sf::Clock	m_splashClock;
 };
 

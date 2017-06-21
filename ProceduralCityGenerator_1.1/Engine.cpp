@@ -14,8 +14,8 @@ bool Engine::Initialize()
 
 	m_timeStepMutex.Init();
 
-	m_stateManager.PushState(new MainMenuState(&m_stateManager));
-	m_stateManager.PushState(new SplashScreenState(&m_stateManager));
+	m_stateManager.PushState(std::make_shared<MainMenuState>(&m_stateManager));
+	m_stateManager.PushState(std::make_shared<SplashScreenState>(&m_stateManager));
 
 	return true;
 }

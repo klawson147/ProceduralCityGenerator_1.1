@@ -1,10 +1,8 @@
 #include "StateManager.h"
 
-
 StateManager::StateManager()
 {
 }
-
 
 StateManager::~StateManager()
 {
@@ -21,7 +19,7 @@ void StateManager::Clear()
 }
 
 // Remove current state and start new state
-void StateManager::ChangeState(IState* state)
+void StateManager::ChangeState(std::shared_ptr<IState> state)
 {
 	if (!m_states.empty())
 	{
@@ -34,12 +32,11 @@ void StateManager::ChangeState(IState* state)
 }
 
 // Pause current state and start new state
-void StateManager::PushState(IState* state)
+void StateManager::PushState(std::shared_ptr<IState> state)
 {
 	if (!m_states.empty())
 	{
 		m_states.back()->Pause();
-		
 	}
 
 	m_states.push_back(state);
@@ -62,8 +59,7 @@ void StateManager::PopState()
 }
 
 // Returns the current state
-IState* StateManager::GetCurrentState()
+std::shared_ptr<IState> StateManager::GetCurrentState()
 {
 	return m_states.back();
 }
-

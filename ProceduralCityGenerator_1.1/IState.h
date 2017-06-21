@@ -10,6 +10,7 @@ class IState
 public:
 
 	IState(StateManager*);
+	
 
 	// Executed at the beginning of each state
 	virtual void Init() = 0;

@@ -30,6 +30,6 @@ namespace DisplayWindow
 
 	sf::Vector2f getRelativePosition(
 		DisplayWindowPosition, 
-		sf::Vector2u, 
+		sf::Vector2f, 
 		sf::Vector2f);
 }
