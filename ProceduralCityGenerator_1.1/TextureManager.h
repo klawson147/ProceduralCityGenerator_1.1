@@ -2,6 +2,7 @@
 
 #include <SFML\Graphics.hpp>
 #include <map>
+#include "ResourceManager.h"
 
 enum class TextureName
 {
@@ -11,18 +12,11 @@ enum class TextureName
 	skyline1920
 };
 
-class TextureManager
+class TextureManager : 
+	public ResourceManager<TextureName, sf::Texture>
 {
 public:
 	TextureManager();
-
-	const sf::Texture& get(TextureName) const;
-
-private:
-
-	void addResource(TextureName, const std::string&);
-
-	std::map<TextureName, sf::Texture> m_texture;
 
 };
 
