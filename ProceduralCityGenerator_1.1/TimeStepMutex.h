@@ -1,7 +1,6 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 
-
 class TimeStepMutex
 {
 public:
@@ -10,12 +9,19 @@ public:
 
 private:
 	sf::Clock
-		m_clock;
+		m_clock,
+		m_permClock;
 
-	sf::Time
-		m_timeSinceLastUpdate = sf::Time::Zero;
+	int
+		m_loop = 0;
 
-	const sf::Time
-		m_c_timePerFrame = sf::seconds(1.f / 60.f);
+	sf::Int64
+		m_nextGameTick;
 
+	const int
+		m_maxFPS = 60,
+		m_maxFrameSkip = 10;
+
+	const float
+		m_skipTicks = (1000 / (const float)m_maxFPS);
 };
