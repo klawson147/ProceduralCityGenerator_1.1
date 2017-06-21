@@ -2,6 +2,8 @@
 #include "IState.h"
 #include "StateManager.h"
 
+#define WAIT_TIME_SECOND 4
+
 class SplashScreenState :
 	public IState
 {

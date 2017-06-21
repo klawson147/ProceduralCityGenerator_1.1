@@ -33,13 +33,5 @@ public:
 	virtual void Display() = 0;
 
 protected:
-
 	StateManager* m_p_stateManager;
-
-	static ResourceHolder m_s_c_resourceHolder;
-
-protected:
-
-	const sf::Texture&	getTexture(TextureName)	const;
-	const sf::Font&		getFont(FontName)		const;
 };

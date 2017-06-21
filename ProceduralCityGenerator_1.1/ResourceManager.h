@@ -5,7 +5,7 @@ template <typename Enum, typename Resource>
 class ResourceManager
 {
 public:
-	const Resource& get(Enum name)
+	const Resource& get(Enum name) const
 	{
 		return m_resources.at(name);
 	}

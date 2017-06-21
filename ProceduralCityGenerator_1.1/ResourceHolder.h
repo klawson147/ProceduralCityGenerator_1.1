@@ -5,6 +5,18 @@
 
 struct ResourceHolder
 {
-	FontManager fonts;
-	TextureManager textures;
+
+public:
+
+	static const ResourceHolder& get();
+
+	const sf::Texture&	getTexture	(TextureName)	const;
+	const sf::Font&		getFont		(FontName)		const;
+
+
+private:
+	FontManager		fonts;
+	TextureManager	textures;
+
+
 };
