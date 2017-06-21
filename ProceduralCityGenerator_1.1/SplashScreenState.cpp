@@ -4,6 +4,7 @@ SplashScreenState::SplashScreenState(StateManager* stateManager) : IState(stateM
 {
 }
 
+// Refactor? 
 void SplashScreenState::Init()
 {
 	m_title_main.setFont(m_s_c_resourceHolder.fonts.get(FontName::sf_atarian_system));
