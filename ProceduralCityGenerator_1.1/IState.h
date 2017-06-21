@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "ResourceHolder.h"
+#include "DisplayWindow.h"
 
 class StateManager;
 
