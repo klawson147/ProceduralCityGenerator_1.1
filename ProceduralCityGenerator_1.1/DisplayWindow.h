@@ -2,6 +2,22 @@
 #include <iostream>
 #include <SFML\Graphics.hpp>
 
+#define WINDOW_MARGIN 20
+
+enum class DisplayWindowPosition {
+	top_left,
+	top_center,
+	top_right,
+	
+	center_left,
+	center_center,
+	center_right,
+
+	bottom_left,
+	bottom_center,
+	bottom_right
+};
+
 namespace DisplayWindow
 {
 	void Init();
@@ -12,5 +28,8 @@ namespace DisplayWindow
 
 	void Draw(sf::Drawable&);
 
-	sf::Vector2u getWindowSize();
+	sf::Vector2f getRelativePosition(
+		DisplayWindowPosition, 
+		sf::Vector2u, 
+		sf::Vector2f);
 }
