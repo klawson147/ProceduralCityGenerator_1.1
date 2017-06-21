@@ -11,13 +11,13 @@ public:
 	}
 
 protected:
-	void addResource(Enum name, const std::string fileName)
+	virtual void addResource(Enum name, const std::string fileName)
 	{
 		Resource res;
 		res.loadFromFile(fileName);
 		m_resources.insert(std::make_pair(name, res));
 	}
 
-private:
 	std::map<Enum, Resource> m_resources;
+
 };

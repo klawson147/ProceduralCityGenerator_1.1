@@ -9,6 +9,7 @@ const ResourceHolder& ResourceHolder::get()
 
 const sf::Texture& ResourceHolder::getTexture(TextureName name) const
 {
+	const sf::Texture& texture = textures.get(name);
 	return textures.get(name);
 }
 
