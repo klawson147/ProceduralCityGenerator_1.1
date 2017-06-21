@@ -9,4 +9,6 @@ namespace DisplayWindow
 	void Render();
 	void checkWindowEvents();
 	bool isOpen();
+
+	void Draw(sf::Drawable&);
 }

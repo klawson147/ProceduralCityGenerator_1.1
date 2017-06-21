@@ -3,7 +3,6 @@
 sf::RenderWindow* m_p_renderWindow;
 namespace DisplayWindow
 {
-
 	sf::RenderWindow* m_p_renderWindow;
 
 	void Init()
@@ -37,5 +36,10 @@ namespace DisplayWindow
 	bool isOpen()
 	{
 		return m_p_renderWindow->isOpen();
+	}
+
+	void Draw(sf::Drawable& element)
+	{
+		m_p_renderWindow->draw(element);
 	}
 }
