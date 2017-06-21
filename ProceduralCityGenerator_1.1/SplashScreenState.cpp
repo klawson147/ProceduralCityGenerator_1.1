@@ -4,10 +4,6 @@ SplashScreenState::SplashScreenState(StateManager* stateManager) : IState(stateM
 {
 }
 
-SplashScreenState::~SplashScreenState()
-{
-	
-}
 
 // Refactor? 
 void SplashScreenState::Init()

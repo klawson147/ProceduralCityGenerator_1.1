@@ -17,10 +17,6 @@ public:
 	void Update();
 	void Display();
 
-
-	SplashScreenState();
-	~SplashScreenState();
-
 private:
 	sf::Text	m_title_main;
 	sf::Text	m_title_secondary;
