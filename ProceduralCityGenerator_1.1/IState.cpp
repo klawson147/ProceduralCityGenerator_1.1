@@ -2,12 +2,9 @@
 
 ResourceHolder IState::m_s_c_resourceHolder;
 
-
 IState::IState(StateManager* stateManager) : m_p_stateManager(stateManager)
 {
-
 }
-
 
 const sf::Texture& IState::getTexture(TextureName name) const
 {

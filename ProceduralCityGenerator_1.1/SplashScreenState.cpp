@@ -4,8 +4,7 @@ SplashScreenState::SplashScreenState(StateManager* stateManager) : IState(stateM
 {
 }
 
-
-// Refactor? 
+// Refactor?
 void SplashScreenState::Init()
 {
 	m_splashClock.restart();
@@ -47,14 +46,14 @@ void SplashScreenState::Init()
 		m_logo.getLocalBounds().height),
 		sf::Vector2f(0, -50)));
 
-		m_background.setTexture(m_s_c_resourceHolder.textures.get(TextureName::skyline1920));
-		m_background.setPosition(
-			DisplayWindow::getRelativePosition(
-			DisplayWindowPosition::bottom_left,
-			sf::Vector2f(
-			m_background.getLocalBounds().width,
-			m_background.getLocalBounds().height),
-			sf::Vector2f(-20, 20)));
+	m_background.setTexture(m_s_c_resourceHolder.textures.get(TextureName::skyline1920));
+	m_background.setPosition(
+		DisplayWindow::getRelativePosition(
+		DisplayWindowPosition::bottom_left,
+		sf::Vector2f(
+		m_background.getLocalBounds().width,
+		m_background.getLocalBounds().height),
+		sf::Vector2f(-20, 20)));
 }
 
 void SplashScreenState::Cleanup()

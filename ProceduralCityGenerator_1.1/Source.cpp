@@ -8,7 +8,7 @@ int main()
 	// Initialize Engine
 	if (!_Engine.Initialize())
 		return 1;
-	
+
 	// Start Engine Loop
 	if (!_Engine.Start())
 		return 1;

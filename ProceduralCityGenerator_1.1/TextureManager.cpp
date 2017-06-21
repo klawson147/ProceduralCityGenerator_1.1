@@ -1,6 +1,5 @@
 #include "TextureManager.h"
 
-
 TextureManager::TextureManager()
 {
 	addResource(TextureName::menu_background, "resources\\img\\menu_background.png");

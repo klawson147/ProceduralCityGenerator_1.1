@@ -83,7 +83,6 @@ namespace DisplayWindow
 			newPosition.x = WINDOW_MARGIN + offset.x;
 			newPosition.y = ((m_p_renderWindow->getSize().y - size.y) - WINDOW_MARGIN) + offset.y;
 			return newPosition;
-		
 		}
 	}
 }

@@ -8,7 +8,7 @@ enum class DisplayWindowPosition {
 	top_left,
 	top_center,
 	top_right,
-	
+
 	center_left,
 	center_center,
 	center_right,
@@ -29,7 +29,7 @@ namespace DisplayWindow
 	void Draw(sf::Drawable&);
 
 	sf::Vector2f getRelativePosition(
-		DisplayWindowPosition, 
-		sf::Vector2f, 
+		DisplayWindowPosition,
+		sf::Vector2f,
 		sf::Vector2f);
 }

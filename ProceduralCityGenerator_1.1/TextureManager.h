@@ -12,11 +12,9 @@ enum class TextureName
 	skyline1920
 };
 
-class TextureManager : 
+class TextureManager :
 	public ResourceManager<TextureName, sf::Texture>
 {
 public:
 	TextureManager();
-
 };
-

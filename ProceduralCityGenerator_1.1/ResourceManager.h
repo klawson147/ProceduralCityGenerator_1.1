@@ -1,7 +1,6 @@
 #pragma once
 #include <map>
 
-
 template <typename Enum, typename Resource>
 class ResourceManager
 {
@@ -22,4 +21,3 @@ protected:
 private:
 	std::map<Enum, Resource> m_resources;
 };
-

@@ -20,6 +20,4 @@ private:
 	void addResource(FontName, const std::string&);
 
 	std::map<FontName, sf::Font> m_font;
-
 };
-
