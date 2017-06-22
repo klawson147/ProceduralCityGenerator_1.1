@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 
-struct StreetManagerInitializationValues
+struct InitialSimValues
 {
 	// --- Initial Street Configuration --- //
 	int				startingNumbStreets = 15;

@@ -10,6 +10,7 @@ namespace DisplayWindow
 	{
 		m_context.antialiasingLevel = 0;
 		m_p_renderWindow = new sf::RenderWindow(sf::VideoMode(1280, 720), "Procedural City Generator", sf::Style::Close, m_context);
+		m_p_renderWindow->setIcon(sfml_icon.width, sfml_icon.height, sfml_icon.pixel_data);
 	}
 
 	void Render()
