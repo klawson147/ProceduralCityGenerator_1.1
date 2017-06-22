@@ -11,7 +11,6 @@ Engine::~Engine()
 bool Engine::Initialize()
 {
 	DisplayWindow::Init();
-
 	m_timeStepMutex.Init();
 
 	m_stateManager.PushState(std::make_shared<MainMenuState>(&m_stateManager));
@@ -24,9 +23,6 @@ bool Engine::Start()
 {
 	while (DisplayWindow::isOpen())
 	{
-		// Check for window events
-		DisplayWindow::checkWindowEvents();
-
 		// Clear window
 		DisplayWindow::Clear();
 
