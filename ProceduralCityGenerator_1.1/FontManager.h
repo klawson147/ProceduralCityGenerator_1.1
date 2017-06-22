@@ -13,7 +13,5 @@ class FontManager :
 public:
 	FontManager();
 
-
 private:
-
 };

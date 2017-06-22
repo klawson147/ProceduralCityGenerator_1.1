@@ -17,9 +17,7 @@ class TextureManager :
 {
 public:
 	TextureManager();
-	
+
 protected:
 	void addResource(TextureName, const std::string);
-
-
 };

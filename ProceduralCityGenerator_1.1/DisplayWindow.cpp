@@ -48,6 +48,11 @@ namespace DisplayWindow
 		return m_p_renderWindow->getSize();
 	}
 
+	void Close()
+	{
+		m_p_renderWindow->close();
+	}
+
 	// Redo?
 	sf::Vector2f getRelativePosition(DisplayWindowPosition position, sf::Vector2f size, sf::Vector2f offset)
 	{

@@ -19,5 +19,4 @@ protected:
 	}
 
 	std::map<Enum, Resource> m_resources;
-
 };

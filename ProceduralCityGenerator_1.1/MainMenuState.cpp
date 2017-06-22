@@ -17,6 +17,40 @@ void MainMenuState::Init()
 		DisplayWindowPosition::top_left,
 		sf::Vector2f(0, 0),
 		sf::Vector2f(-20, -20)));
+
+	m_buttons.push_back(
+		std::make_shared
+		<DirectionButton>(
+		m_p_stateManager,
+		std::make_shared<SplashScreenState>(m_p_stateManager),
+		sf::Vector2f((DisplayWindow::getSize().x / 6) * 1, DisplayWindow::getSize().y / 1.25),
+		"Start",
+		"test2"));
+
+	m_buttons.push_back(
+		std::make_shared
+		<DirectionButton>(
+		m_p_stateManager,
+		std::make_shared<SplashScreenState>(m_p_stateManager),
+		sf::Vector2f((DisplayWindow::getSize().x / 6) * 2, DisplayWindow::getSize().y / 1.25),
+		"Options",
+		"test2"));
+
+	m_buttons.push_back(
+		std::make_shared
+		<DirectionButton>(
+		m_p_stateManager,
+		std::make_shared<SplashScreenState>(m_p_stateManager),
+		sf::Vector2f((DisplayWindow::getSize().x / 6) * 3, DisplayWindow::getSize().y / 1.25),
+		"Settings",
+		"test2"));
+
+	m_buttons.push_back(
+		std::make_shared
+		<ExitButton>(
+		sf::Vector2f((DisplayWindow::getSize().x / 6) * 4, DisplayWindow::getSize().y / 1.25),
+		"Exit",
+		"testExit"));
 }
 
 void MainMenuState::Cleanup()
@@ -42,4 +76,9 @@ void MainMenuState::Update()
 void MainMenuState::Display()
 {
 	DisplayWindow::Draw(m_background);
+
+	for (auto i = m_buttons.begin(); i != m_buttons.end(); i++)
+	{
+		i->get()->Display();
+	}
 }

@@ -1,5 +1,12 @@
 #pragma once
 #include "IState.h"
+#include "DirectionButton.h"
+#include "ExitButton.h"
+
+#include "SplashScreenState.h"
+#include "SettingsMenuState.h"
+#include "OptionsMenuState.h"
+
 class MainMenuState :
 	public IState
 {
@@ -16,5 +23,6 @@ public:
 	void Display();
 
 private:
-	sf::Sprite	m_background;
+	sf::Sprite								m_background;
+	std::vector<std::shared_ptr<IButton>>	m_buttons;
 };
