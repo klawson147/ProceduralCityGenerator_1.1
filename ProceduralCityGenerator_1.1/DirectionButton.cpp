@@ -19,6 +19,6 @@ DirectionButton::~DirectionButton()
 
 void DirectionButton::Click()
 {
-	m_p_stateManager->ChangeState(m_changeableState);
+	m_p_stateManager->PushState(m_changeableState);
 }
 

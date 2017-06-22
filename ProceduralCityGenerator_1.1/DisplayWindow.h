@@ -28,8 +28,16 @@ namespace DisplayWindow
 
 	sf::RenderWindow* getRenderWindow();
 
+	void
+		setSize(sf::Vector2u);
 
-	sf::Vector2u getSize();
+	void setAntiAlias(int);
+
+	sf::Vector2u 
+		getSize();
+
+	int
+		getAntiAlias();
 
 	void Draw(sf::Drawable&);
 
@@ -37,4 +45,6 @@ namespace DisplayWindow
 		DisplayWindowPosition,
 		sf::Vector2f,
 		sf::Vector2f);
+
+
 }

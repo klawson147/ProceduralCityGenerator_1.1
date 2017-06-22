@@ -3,11 +3,13 @@
 sf::RenderWindow* m_p_renderWindow;
 namespace DisplayWindow
 {
+	sf::ContextSettings m_context;
 	sf::RenderWindow* m_p_renderWindow;
 
 	void Init()
 	{
-		m_p_renderWindow = new sf::RenderWindow(sf::VideoMode(1280, 720), "Procedural City Generator", sf::Style::Close);
+		m_context.antialiasingLevel = 0;
+		m_p_renderWindow = new sf::RenderWindow(sf::VideoMode(1280, 720), "Procedural City Generator", sf::Style::Close, m_context);
 	}
 
 	void Render()
@@ -19,6 +21,23 @@ namespace DisplayWindow
 		m_p_renderWindow->clear(sf::Color::White);
 	}
 
+
+	void setSize(sf::Vector2u size)
+	{
+		m_p_renderWindow->create(sf::VideoMode(size.x, size.y), "Procedural City Generator", sf::Style::Close, m_context);
+	}
+
+	void setAntiAlias(int val)
+	{
+		sf::Vector2u size = m_p_renderWindow->getSize();
+		m_context.antialiasingLevel = val;
+		m_p_renderWindow->create(sf::VideoMode(size.x, size.y), "Procedural City Generator", sf::Style::Close, m_context);
+	}
+
+	int getAntiAlias()
+	{
+		return m_context.antialiasingLevel;
+	}
 
 
 	sf::RenderWindow* getRenderWindow()

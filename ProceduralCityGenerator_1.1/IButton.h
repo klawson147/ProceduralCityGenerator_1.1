@@ -27,6 +27,5 @@ protected:
 	sf::Text			m_text;
 	sf::Text			m_textUpper;
 
-protected:
 	
 };

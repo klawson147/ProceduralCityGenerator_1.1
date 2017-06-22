@@ -6,6 +6,9 @@ MainMenuState::MainMenuState(StateManager* stateManager) : IState(stateManager)
 
 void MainMenuState::Init()
 {
+	m_background.setScale(1, 1);
+	m_buttons.clear();
+
 	m_background.setTexture(ResourceHolder::get().getTexture(TextureName::menu_background));
 
 	m_background.scale(
@@ -40,7 +43,7 @@ void MainMenuState::Init()
 		std::make_shared
 		<DirectionButton>(
 		m_p_stateManager,
-		std::make_shared<SplashScreenState>(m_p_stateManager),
+		std::make_shared<SettingsMenuState>(m_p_stateManager),
 		sf::Vector2f((DisplayWindow::getSize().x / 6) * 3, DisplayWindow::getSize().y / 1.25),
 		"Settings",
 		"test2"));
@@ -63,6 +66,7 @@ void MainMenuState::Pause()
 
 void MainMenuState::Resume()
 {
+	Init();
 }
 
 void MainMenuState::GetEvents()
