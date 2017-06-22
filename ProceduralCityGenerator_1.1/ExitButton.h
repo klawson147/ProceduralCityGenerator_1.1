@@ -9,6 +9,8 @@ public:
 		const std::string			textUpper);
 	~ExitButton();
 
+	void Click();
+
 private:
-	void Update();
+
 };

@@ -8,7 +8,7 @@ ExitButton::~ExitButton()
 {
 }
 
-void ExitButton::Update()
+void ExitButton::Click()
 {
 	DisplayWindow::Close();
 }

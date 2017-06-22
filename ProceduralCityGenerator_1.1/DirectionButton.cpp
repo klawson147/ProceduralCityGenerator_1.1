@@ -9,6 +9,7 @@ DirectionButton::DirectionButton(
 	const std::string textUpper) : IButton(position, text, textUpper)
 {
 	m_p_stateManager = stateManager;
+	m_changeableState = state;
 }
 
 
@@ -16,7 +17,7 @@ DirectionButton::~DirectionButton()
 {
 }
 
-void DirectionButton::Update()
+void DirectionButton::Click()
 {
 	m_p_stateManager->ChangeState(m_changeableState);
 }

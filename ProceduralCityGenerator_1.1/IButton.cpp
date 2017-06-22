@@ -29,13 +29,12 @@ IButton::~IButton()
 {
 }
 
-bool IButton::Contains(const sf::Vector2f& mousePosition)
+bool IButton::Contains(const sf::Vector2i& mousePosition)
 {
 	sf::FloatRect floatRect(m_shape.getPosition(), m_shape.getSize());
 
-	if (floatRect.contains(mousePosition))
+	if (floatRect.contains(mousePosition.x, mousePosition.y))
 	{
-		Update();
 		return true;
 	}
 

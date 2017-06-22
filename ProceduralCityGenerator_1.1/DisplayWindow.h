@@ -23,9 +23,11 @@ namespace DisplayWindow
 	void Init();
 	void Clear();
 	void Render();
-	void checkWindowEvents();
 	void Close();
 	bool isOpen();
+
+	sf::RenderWindow* getRenderWindow();
+
 
 	sf::Vector2u getSize();
 

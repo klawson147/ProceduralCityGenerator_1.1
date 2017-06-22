@@ -67,6 +67,29 @@ void MainMenuState::Resume()
 
 void MainMenuState::GetEvents()
 {
+	sf::Event event;
+	sf::RenderWindow* rw = DisplayWindow::getRenderWindow();
+
+	while (rw->pollEvent(event))
+	{
+		switch (event.type)
+		{
+		case sf::Event::Closed:
+			DisplayWindow::Close();
+			break;
+			
+		case sf::Event::MouseButtonPressed:
+			for (auto i = m_buttons.begin(); i != m_buttons.end(); i++)
+			{
+				if (i->get()->Contains(sf::Mouse::getPosition(*rw)))
+				{
+					i->get()->Click();
+				}
+			}
+			break;
+		}
+	}
+
 }
 
 void MainMenuState::Update()

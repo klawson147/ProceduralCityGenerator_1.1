@@ -14,10 +14,13 @@ public:
 	~IButton();
 
 	bool
-		Contains(const sf::Vector2f& mousePosition);
+		Contains(const sf::Vector2i& mousePosition);
 
 	void
 		Display();
+
+	virtual void
+		Click() = 0;
 
 protected:
 	sf::RectangleShape	m_shape;
@@ -25,6 +28,5 @@ protected:
 	sf::Text			m_textUpper;
 
 protected:
-	virtual void
-		Update() = 0;
+	
 };

@@ -19,20 +19,14 @@ namespace DisplayWindow
 		m_p_renderWindow->clear(sf::Color::White);
 	}
 
-	void checkWindowEvents()
-	{
-		sf::Event _event;
 
-		while (m_p_renderWindow->pollEvent(_event))
-		{
-			switch (_event.type)
-			{
-			case sf::Event::Closed:
-				m_p_renderWindow->close();
-				break;
-			}
-		}
+
+	sf::RenderWindow* getRenderWindow()
+	{
+		return m_p_renderWindow;
 	}
+
+
 	bool isOpen()
 	{
 		return m_p_renderWindow->isOpen();
