@@ -21,7 +21,6 @@ namespace DisplayWindow
 		m_p_renderWindow->clear(sf::Color::White);
 	}
 
-
 	void setSize(sf::Vector2u size)
 	{
 		m_p_renderWindow->create(sf::VideoMode(size.x, size.y), "Procedural City Generator", sf::Style::Close, m_context);
@@ -39,12 +38,10 @@ namespace DisplayWindow
 		return m_context.antialiasingLevel;
 	}
 
-
 	sf::RenderWindow* getRenderWindow()
 	{
 		return m_p_renderWindow;
 	}
-
 
 	bool isOpen()
 	{

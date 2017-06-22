@@ -18,11 +18,11 @@ IButton::IButton(sf::Vector2f position, const std::string name, const std::strin
 
 	m_textUpper.setFont(ResourceHolder::get().getFont(FontName::sf_atarian_system));
 	m_textUpper.setCharacterSize(28);
-	m_textUpper.setColor(sf::Color(255, 255, 255, 255));
-	m_textUpper.setString(name);
+	m_textUpper.setColor(sf::Color(0, 0, 0, 255));
+	m_textUpper.setString(nameUpper);
 	m_textUpper.setPosition(
-		(position.x + (BUTTON_WIDTH / 2) - ((m_text.getCharacterSize() / 6) * m_text.getString().getSize())),
-		(m_shape.getPosition().y));
+		(m_shape.getPosition().x),
+		(m_shape.getPosition().y) - 40);
 }
 
 IButton::~IButton()

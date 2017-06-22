@@ -27,6 +27,7 @@ public:
 private:
 	sf::Sprite								m_background;
 	std::vector<std::shared_ptr<IButton>>	m_buttons;
+	std::vector<std::shared_ptr<TextFieldButton>>	m_textfield;
 	std::vector<std::tuple<UserFields, 
 		std::string, 
 		int, 

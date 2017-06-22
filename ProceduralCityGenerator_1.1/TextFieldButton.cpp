@@ -1,49 +1,66 @@
 #include "TextFieldButton.h"
 
-
 TextFieldButton::TextFieldButton(UserFields userField, sf::Vector2f position,
 	const std::string text,
-	const std::string textUpper) : IButton(position, text, textUpper)
+	const std::string textUpper,
+	int lower,
+	int upper) : IButton(position, text, textUpper)
 {
 	m_field = userField;
+	m_minVal = lower;
+	m_maxVal = upper;
 }
-
 
 TextFieldButton::~TextFieldButton()
 {
-
 }
-
 
 void TextFieldButton::Click()
 {
-	return;
+	if (m_isHighlighted)
+	{
+		m_isSelected = true;
+		m_shape.setOutlineColor(sf::Color::Red);
+	}
+	else
+	{
+		m_isSelected = false;
+		m_shape.setOutlineColor(sf::Color(199, 199, 199, 255));
+	}
 
+	return;
 }
 
 bool TextFieldButton::isSelection()
 {
-	return isSelected;
+	return m_isSelected;
 }
 
 bool TextFieldButton::Contains(const sf::Vector2i& mousePosition)
 {
 	sf::FloatRect floatRect(m_shape.getPosition(), m_shape.getSize());
 
-
 	if (floatRect.contains(mousePosition.x, mousePosition.y))
 	{
-		isSelected = true;
+		m_isHighlighted = true;
 		return true;
 	}
+	else
 	{
-		isSelected = false;
+		m_isHighlighted = false;
 		return false;
 	}
 }
 
-void TextFieldButton::insertValue(std::string addition)
+void TextFieldButton::insertValue(char addition)
 {
+	std::string add(1, addition);
+
+	if (!isValidInput(add))
+	{
+		return;
+	}
+
 	if (m_text.getString().getSize() <= m_maxDigits)
 	{
 		std::string str = m_text.getString() + addition;
@@ -61,15 +78,18 @@ void TextFieldButton::insertValue(std::string addition)
 	}
 	else
 	{
-
 	}
-	
 }
 
 void TextFieldButton::backspace()
 {
 	std::string str = m_text.getString();
-	str.pop_back();
+	if (str.length() != 0)
+	{
+		str.pop_back();
+
+	}
+	
 	m_text.setString(str);
 }
 

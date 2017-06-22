@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IState" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQiAAAAAAAAAAAAAAAAAQAAgAAAAAAAAAACAEgACAA=</HashCode>
+      <FileName>IState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuState" Collapsed="true">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQkAAAAAAAABAAAAAAAAQAAAAAAAAAAAAACAEgQCAA=</HashCode>
+      <FileName>MainMenuState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SplashScreenState" Collapsed="true">
+    <Position X="1.5" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="IState" ManuallyRouted="true">
+      <Path>
+        <Point X="6" Y="2.562" />
+        <Point X="6" Y="2.875" />
+        <Point X="2.25" Y="2.875" />
+        <Point X="2.25" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAUgAAAAAAAKAAAAIAAAAQAAAAAAAQAAAAACAEgQCAA=</HashCode>
+      <FileName>SplashScreenState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StateManager" Collapsed="true">
+    <Position X="5.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAACBAAAAgACAAAAAAMAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>StateManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SettingsMenuState" Collapsed="true">
+    <Position X="3.5" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="IState" ManuallyRouted="true">
+      <Path>
+        <Point X="6" Y="2.562" />
+        <Point X="6" Y="2.875" />
+        <Point X="4.25" Y="2.875" />
+        <Point X="4.25" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAQkAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAACAEkQCAA=</HashCode>
+      <FileName>SettingsMenuState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OptionsMenuState" Collapsed="true">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQkAAAAAAACQAAAACAAAQQAAAAAAAAAAAACAEgQCAA=</HashCode>
+      <FileName>OptionsMenuState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQACQAAAAAAAAAAAAAAIAAABAAAAAAAAAA=</HashCode>
+      <FileName>Engine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FontManager" Collapsed="true">
+    <Position X="14.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>FontManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResourceManager&lt;Enum, Resource&gt;" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ResourceManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureManager" Collapsed="true">
+    <Position X="12.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TextureManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IButton" Collapsed="true">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAAAAIAgAAAAAAAQAAAAAAEAAAAAAAAAAQAgA=</HashCode>
+      <FileName>IButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DirectionButton" Collapsed="true">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAIABAAAAAAAAAAAACAAAAAAAAgA=</HashCode>
+      <FileName>DirectionButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExitButton" Collapsed="true">
+    <Position X="6" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgA=</HashCode>
+      <FileName>ExitButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BackButton" Collapsed="true">
+    <Position X="10.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>BackButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CycleButton" Collapsed="true">
+    <Position X="7.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAIAAAAAAIAAAAAAAAQAAiA=</HashCode>
+      <FileName>CycleButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextFieldButton" Collapsed="true">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAADAAQgAEAAAJAAAAAAABAAABAAAAAAAAACAUQAhA=</HashCode>
+      <FileName>TextFieldButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeStepMutex" Collapsed="true">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAABgAAAAAAAAAAAAAAAAAAAAQAAAAIDAAAABAg=</HashCode>
+      <FileName>TimeStepMutex.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="ResourceHolder" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAgAAAAAAQAAAAAAAAAAIAAAAAAAQAAA=</HashCode>
+      <FileName>ResourceHolder.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="FontName" Collapsed="true">
+    <Position X="14.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>FontManager.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TextureName" Collapsed="true">
+    <Position X="12.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAgBAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>TextureManager.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="UserFields" Collapsed="true">
+    <Position X="11.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAgAAYAAAAAIgAAAAAAAAAAAAhIIAACAAAAgAAAAA=</HashCode>
+      <FileName>UserFields.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CycleOptions" Collapsed="true">
+    <Position X="7.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CycleButton.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ResolutionOptions" Collapsed="true">
+    <Position X="7.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAACAgAAgAAA=</HashCode>
+      <FileName>CycleButton.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="AntiAliasOptions" Collapsed="true">
+    <Position X="7.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAACAAAAAAAAAAgAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>CycleButton.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DisplayWindowPosition" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAKAAAAADAAAEQAACAAAAAAAAAAQAA=</HashCode>
+      <FileName>DisplayWindow.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

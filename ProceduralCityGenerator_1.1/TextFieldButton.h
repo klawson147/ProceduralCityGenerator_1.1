@@ -10,13 +10,15 @@ public:
 		UserFields field,
 		sf::Vector2f position, 
 		const std::string text, 
-		const std::string textUpper);
+		const std::string textUpper,
+		int lower,
+		int upper);
 	~TextFieldButton();
 
 	std::string getStringValue();
 	int			getIntValue();
 
-	void		insertValue(std::string);
+	void		insertValue(char);
 	void		backspace();
 	void		clearText();
 	bool		Contains(const sf::Vector2i& mousePosition);
@@ -34,7 +36,8 @@ protected:
 private:
 	UserFields	m_field;
 
-	bool		isSelected;
+	bool		m_isSelected;
+	bool		m_isHighlighted;
 	
 	int			m_minVal = 0;
 	int			m_maxVal = 0;

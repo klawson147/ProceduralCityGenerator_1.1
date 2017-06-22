@@ -33,7 +33,7 @@ namespace DisplayWindow
 
 	void setAntiAlias(int);
 
-	sf::Vector2u 
+	sf::Vector2u
 		getSize();
 
 	int
@@ -45,6 +45,4 @@ namespace DisplayWindow
 		DisplayWindowPosition,
 		sf::Vector2f,
 		sf::Vector2f);
-
-
 }

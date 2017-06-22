@@ -27,17 +27,17 @@ void MainMenuState::Init()
 		m_p_stateManager,
 		std::make_shared<SplashScreenState>(m_p_stateManager),
 		sf::Vector2f((DisplayWindow::getSize().x / 6) * 1, DisplayWindow::getSize().y / 1.25),
-		"Start",
-		"test2"));
+		"Quick Start",
+		""));
 
 	m_buttons.push_back(
 		std::make_shared
 		<DirectionButton>(
 		m_p_stateManager,
-		std::make_shared<SplashScreenState>(m_p_stateManager),
+		std::make_shared<OptionsMenuState>(m_p_stateManager),
 		sf::Vector2f((DisplayWindow::getSize().x / 6) * 2, DisplayWindow::getSize().y / 1.25),
-		"Options",
-		"test2"));
+		"Sim Options",
+		""));
 
 	m_buttons.push_back(
 		std::make_shared
@@ -46,14 +46,14 @@ void MainMenuState::Init()
 		std::make_shared<SettingsMenuState>(m_p_stateManager),
 		sf::Vector2f((DisplayWindow::getSize().x / 6) * 3, DisplayWindow::getSize().y / 1.25),
 		"Settings",
-		"test2"));
+		""));
 
 	m_buttons.push_back(
 		std::make_shared
 		<ExitButton>(
 		sf::Vector2f((DisplayWindow::getSize().x / 6) * 4, DisplayWindow::getSize().y / 1.25),
 		"Exit",
-		"testExit"));
+		""));
 }
 
 void MainMenuState::Cleanup()
@@ -81,7 +81,7 @@ void MainMenuState::GetEvents()
 		case sf::Event::Closed:
 			DisplayWindow::Close();
 			break;
-			
+
 		case sf::Event::MouseButtonPressed:
 			for (auto i = m_buttons.begin(); i != m_buttons.end(); i++)
 			{
@@ -93,7 +93,6 @@ void MainMenuState::GetEvents()
 			break;
 		}
 	}
-
 }
 
 void MainMenuState::Update()

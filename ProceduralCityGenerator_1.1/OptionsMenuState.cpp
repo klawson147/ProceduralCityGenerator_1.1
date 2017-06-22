@@ -70,6 +70,43 @@ void OptionsMenuState::GetEvents()
 				if (i->get()->Contains(sf::Mouse::getPosition(*rw)))
 				{
 					i->get()->Click();
+					break;
+				}
+			}
+			for (auto i = m_textfield.begin(); i != m_textfield.end(); i++)
+			{
+				i->get()->Click();
+				
+			}
+			break;
+		case sf::Event::MouseMoved:
+			for (auto i = m_textfield.begin(); i != m_textfield.end(); i++)
+			{
+				if (i->get()->Contains(sf::Mouse::getPosition(*rw)))
+				{
+					// Perform Action?
+				}
+				
+			}
+			break;
+		case sf::Event::KeyPressed:
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace))
+			{
+				for (auto i = m_textfield.begin(); i != m_textfield.end(); i++)
+				{
+					if (i->get()->isSelection())
+					{
+						i->get()->backspace();
+					}
+				}
+			}
+			break;
+		case sf::Event::TextEntered:
+			for (auto i = m_textfield.begin(); i != m_textfield.end(); i++)
+			{
+				if (i->get()->isSelection() && event.text.unicode < 128)
+				{
+					i->get()->insertValue(static_cast<char>(event.text.unicode));
 				}
 			}
 			break;
@@ -89,6 +126,11 @@ void OptionsMenuState::Display()
 	{
 		i->get()->Display();
 	}
+
+	for (auto i = m_textfield.begin(); i != m_textfield.end(); i++)
+	{
+		i->get()->Display();
+	}
 }
 
 void OptionsMenuState::createButtons()
@@ -96,35 +138,41 @@ void OptionsMenuState::createButtons()
 	int offset = 0;
 	for (auto i = m_defaultButtonValues.begin(); i != m_defaultButtonValues.begin() + 4; i++)
 	{
-		m_buttons.push_back(
+		m_textfield.push_back(
 			std::make_shared
 			<TextFieldButton>(
 			std::get<0>(*i),
-			sf::Vector2f(sf::Vector2f(50 + (offset++ * 220), 50)),
+			sf::Vector2f(sf::Vector2f(50 + (offset++ * 240), 50)),
 			std::to_string(std::get<2>(*i)),
-			std::get<1>(*i)));
+			std::get<1>(*i),
+			std::get<3>(*i),
+			std::get<4>(*i)));
 	}
 
 	for (auto i = m_defaultButtonValues.begin() + 4; i != m_defaultButtonValues.begin() + 8; i++)
 	{
-		m_buttons.push_back(
+		m_textfield.push_back(
 			std::make_shared
 			<TextFieldButton>(
 			std::get<0>(*i),
-			sf::Vector2f(sf::Vector2f(50 + ((offset++ - 4) * 220), 200)),
+			sf::Vector2f(sf::Vector2f(50 + ((offset++ - 4) * 240), 200)),
 			std::to_string(std::get<2>(*i)),
-			std::get<1>(*i)));
+			std::get<1>(*i),
+			std::get<3>(*i),
+			std::get<4>(*i)));
 	}
 
 	for (auto i = m_defaultButtonValues.begin() + 8; i != m_defaultButtonValues.begin() + 10; i++)
 	{
-		m_buttons.push_back(
+		m_textfield.push_back(
 			std::make_shared
 			<TextFieldButton>(
 			std::get<0>(*i),
-			sf::Vector2f(sf::Vector2f(50 + ((offset++ - 8) * 220), 250)),
+			sf::Vector2f(sf::Vector2f(50 + ((offset++ - 8) * 240), 350)),
 			std::to_string(std::get<2>(*i)),
-			std::get<1>(*i)));
+			std::get<1>(*i),
+			std::get<3>(*i),
+			std::get<4>(*i)));
 	}
 
 	m_buttons.push_back(
@@ -140,8 +188,7 @@ void OptionsMenuState::createButtons()
 		std::make_shared
 		<BackButton>(
 		m_p_stateManager,
-		sf::Vector2f((2 * (DisplayWindow::getSize().x / 2)) + ((DisplayWindow::getSize().x / 2) * (.30)), DisplayWindow::getSize().y / 1.25),
+		sf::Vector2f((1.3 * (DisplayWindow::getSize().x / 2)) + ((DisplayWindow::getSize().x / 2) * (.30)), DisplayWindow::getSize().y / 1.25),
 		"Back",
 		""));
-
 }
