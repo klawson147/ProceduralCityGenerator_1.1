@@ -13,7 +13,7 @@ IButton::IButton(sf::Vector2f position, const std::string name, const std::strin
 	m_text.setColor(sf::Color(255, 255, 255, 255));
 	m_text.setString(name);
 	m_text.setPosition(
-		(position.x + (BUTTON_WIDTH / 2) - ((m_text.getCharacterSize() / 6) * m_text.getString().getSize())), 
+		(m_shape.getPosition().x + (BUTTON_WIDTH / 2) - ((m_text.getCharacterSize() / 6) * m_text.getString().getSize())), 
 		(m_shape.getPosition().y));
 
 	m_textUpper.setFont(ResourceHolder::get().getFont(FontName::sf_atarian_system));

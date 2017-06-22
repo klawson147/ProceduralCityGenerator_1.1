@@ -13,7 +13,7 @@ public:
 	IButton(sf::Vector2f position, const std::string text, const std::string textUpper);
 	~IButton();
 
-	bool
+	virtual bool
 		Contains(const sf::Vector2i& mousePosition);
 
 	void
